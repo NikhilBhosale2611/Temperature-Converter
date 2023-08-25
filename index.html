@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        *{
+            font-size: 40px;
+            font-family: cambria;
+        }
+        body{
+            background-color: lightyellow;
+        }
+    </style>
+        
+</head>
+
+<body>
+    <center>
+    <h1>Temperature Converter</h1>
+    
+    <input type="number" name="" id="cel" placeholder="enter Temperature in C"><br><br>
+    
+    <input type="number" name="" id="far" placeholder="enter Temperature in F">
+
+    <script>
+        cel = document.getElementById("cel");
+        far = document.getElementById("far");
+        cel.addEventListener("input",function(){
+            if(cel.value == ""){
+                far.value = "";
+            }
+            else{
+                let res = parseFloat((cel.value *9/5)+32) 
+                far.value = res.toFixed(2)
+            }
+            
+        })
+        far.addEventListener("input",function(){
+            if(far.value == ""){
+                cel.value = "";
+            }
+            else{
+                let res = parseFloat((5/9*far.value) - 32) 
+                cel.value = res.toFixed(2)
+            }
+            
+        })
+    </script>
+</center>
+</body>
+
+</html>
